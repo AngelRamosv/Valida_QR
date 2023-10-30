@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    /*background-color: chartreuse;*/
+    background-color: rgb(18, 151, 18);
+    align-items: center;
+    padding: 30px;
+}
+
+.center {
+    display:flex;
+    text-align: center; /* Centra el texto horizontalmente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 50px;
+}
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+    color: black;
+}
+
+/* Estilo del contenedor del slider */
+main {
+    background-image: linear-gradient(to right, green, rgb(120, 199, 110));
+    padding: 20px;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo de los controles del slider */
+.slider-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-dot {
+    background-color: black;
+    border: none;
+    width: 25px;
+    height: 5px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+}
+
+button:hover {
+    background-color: rgb(28, 89, 26); /* Color al pasar el ratón */
+    color: white;
+}
+.icono {
+    position: absolute; /* Coloca el icono con posición absoluta */
+    top: 0; /* Ajusta la posición vertical si es necesario */
+    padding-right: 190px; /* Coloca el icono en la esquina superior derecha del footer */
+}
+nav a:hover {
+    color: white;
+}
+
+button {
+    /* Ajusta el margen para el botón (más a la derecha) */
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+

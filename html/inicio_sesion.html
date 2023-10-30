@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/inicio.css">
+</head>
+<body>
+    <div class="container">
+
+        <section class="form-main">
+            <h1>Inicio de sesión</h1>
+
+            <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/jmwaxguh.json" trigger="hover" style="width:250px;height:250px"></lord-icon>
+
+            <form action="inicio_sesion.php" method="post" id="registroForm">
+                <div class="input-box">
+                    <input type="text" placeholder="Usuario" class="input-control" name="user">
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Contraseña" class="input-control" name="pasword">
+                </div>
+
+                <button type="submit" class="btn">Iniciar</button> <br>
+
+                <label class="eti">¿Olvidaste tu contraseña?</label>
+                <!-- Elemento div para mostrar los mensajes de error -->
+                <div id="mensaje-error" style="color: white;"></div>
+            </form>
+        </section>
+    </div>
+    <script src="../javascript/inicio_sesion.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firmar documento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registrar_firma.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="containerv">
+        <h3>!!AVISO¡¡</h3>
+         <ul>           
+            <p>Tu firma digital solo será válida cuando firmes este documento y tu password coincida en la BD</p>
+         </ul>
+     </div>
+
+    <div class="container">
+
+        <section class="form-main">
+            <h1>Firmar documento</h1>
+
+            <form action="firmar_doc.php" method="post" id="registroForm">
+
+                <div class="input-box">
+                    <input type="text" placeholder="Tu nombre de usuario" class="input-control" name="nombre_user">
+                </div>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Nombre del documento" class="input-control" name="nombre_doc">
+                </div>
+
+                <div class="input-box">
+                    <input type="date" class="input-control" name="fecha">
+                </div>    
+
+                <div class="input-box">
+                    <select name="tipo" class="input-control">
+                        <option value="" disabled selected>Tipo de documento</option>
+                        <option value="CBI">Constancia</option>
+                        <option value="CSH">Certificación</option>
+                        <option value="CSS">Reconocimiento</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Nombre del evento" class="input-control" name="evento">
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Password" class="input-control" name="pasword">
+                </div>
+
+                <button type="submit" class="btn">Firmar</button> <br>
+
+                <!-- Elemento div para mostrar los mensajes de error -->
+                <div id="mensaje-error" style="color: white;"></div>
+            </form>
+        </section>
+    </div>
+    <script src="../javascript/firmar_doc.js"></script>
+</body>
+</html>

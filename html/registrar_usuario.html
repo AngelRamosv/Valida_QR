@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registrar.css">
+</head>
+<body>
+    <div class="container">
+        <section>
+            <h1>Firma Digital</h1>
+            <p id="demo">¿Cómo funciona nuestro sistema?</p>
+            <img src="https://www.computing.es/wp-content/uploads/2023/03/97103_29.jpg" width="450px" height="250px" alt="firma">
+            <p>Para poder registrar tu firma digital
+               deberás darte de alta en nuestra página
+               web, proporcionando tus datos en el siguiente
+               formulario y usando tu nombre de usuario y 
+               contraseña correspondiente para acceder.
+            </p>
+        </section>
+
+        <section class="form-main">
+            <h3>Registrar Usuario</h3>
+            <form action="registrar.php" method="post" id="registroForm">
+                <div class="input-box">
+                    <input type="text" placeholder="Nombre" class="input-control" name="nombre">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Apellido Paterno" class="input-control" name="apaterno">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Apellido Materno" class="input-control" name="amaterno">
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Correo" class="input-control" name="correo">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Usuario" class="input-control" name="usuario">
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Contraseña" class="input-control" name="contraseña">
+                </div>
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+            <br>
+            <div id="mensaje-error" style="color: white;"></div>
+        </section>
+    </div>
+    <script src="../javascript/registrar.js"></script>
+</body>
+</html>

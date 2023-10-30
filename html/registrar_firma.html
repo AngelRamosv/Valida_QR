@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Firma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registrar_firma.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="containerv">
+        <h3>!!AVISO¡¡</h3>
+         <ul>           
+            <p>Tu firma digital solo será válida cuando firmes el documento</p>
+            <p>La firma digital debe tener 8 carácteres (mínimo 1 minúscula, 1 mayúscula, 1 carácter alfanumérico)</p>
+            <p>Revisa cuidadosamente que las contraseñas coincidan y sean las correctas</p>
+         </ul>
+     </div>
+
+    <div class="container">
+
+        <section class="form-main">
+            <h1>Registrar Firma</h1>
+
+            <form action="registrar_firma.php" method="post" id="registroForm">
+                <div class="input-box">
+                    <input type="date" class="input-control" name="calendario">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Usuario" class="input-control" name="usuario">
+                </div>
+        
+                <div class="input-box">
+                    <input type="text" placeholder="Curp" class="input-control" name="curp">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Departamento" class="input-control" name="depa">
+                </div>
+                <div class="input-box">
+                    <select name="division" class="input-control">
+                        <option value="" disabled selected>División</option>
+                        <option value="CBI">CBI</option>
+                        <option value="CSH">CSH</option>
+                        <option value="CSS">CSS</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Cargo" class="input-control" name="cargo">
+                </div>
+                <div class="input-box">
+                    <select name="unidad" class="input-control">
+                        <option value="" disabled selected>Unidad</option>
+                        <option value="CBI">Iztapalapa</option>
+                        <option value="CSH">Lerma</option>
+                        <option value="CSS">Xochimilco</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Password" class="input-control" name="pasword">
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Confirmar Password" class="input-control" name="confirm_pasword">
+                </div>
+
+                <button type="submit" class="btn">Registrar</button> <br>
+
+                <!-- Elemento div para mostrar los mensajes de error -->
+                <div id="mensaje-error" style="color: white;"></div>
+            </form>
+        </section>
+    </div>
+    <script src="../javascript/registrar_firma.js"></script>
+</body>
+</html>
