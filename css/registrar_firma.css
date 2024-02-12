@@ -10,9 +10,9 @@ body {
     margin: 0 auto;
 }
 
-.containerv {
-    
+.containerv {    
     background-image: url('');
+    background-color: rgba(84, 20, 73, 0.5);
     border: 2px solid white;
     text-align: left;
     border-radius: 10px;
@@ -22,30 +22,30 @@ body {
 
 h2 {
     font-family: "cursive"; 
-    color: black; 
+    color: white; 
     font-size: 24px; 
-    font-weight: bold; 
+    font-style: normal;
     font-family: "Brush Script MT", cursive;
 }
 
 h3 {
     font-family: "cursive"; 
-    color: black; 
+    color: white; 
     font-size: 24px; 
-    font-weight: bold;
+    
     text-align: center;
     font-family: Monaco, monospace; 
 }
 
 h3::before {
     content: "⚠ ";
-    color: black; /* Puedes ajustar el color según tus preferencias */
+    color: white; /* Puedes ajustar el color según tus preferencias */
     margin-right: 5px; /* Opcional: espacio entre el símbolo y el texto */
 }
 
 h3::after {
     content: " ⚠";
-    color: black; /* Puedes ajustar el color según tus preferencias */
+    color: white; /* Puedes ajustar el color según tus preferencias */
     margin-right: 5px; /* Opcional: espacio entre el símbolo y el texto */
 }
 
@@ -68,16 +68,15 @@ h4::after{
 }
 
 ul {
-    color: black;
+    color: white;
     font-size: 1.2rem;
-    font-weight: bold;
     font-family: Monaco, monospace;
     text-decoration: underline;
 }
 
 .containerv ul p::before {
     content: "⚠ ";
-    color: black; /* Puedes ajustar el color según tus preferencias */
+    color: white; /* Puedes ajustar el color según tus preferencias */
     margin-right: 5px; /* Opcional: espacio entre el símbolo y el texto */
 }
 
@@ -92,10 +91,25 @@ input {
 }
 
 
-
-
-
-
+body {
+    background-image: url('../imagen/kar.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente blanco */
+    backdrop-filter: blur(5px); /* Aplica un desenfoque al fondo */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-light-gray);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
 
 
 

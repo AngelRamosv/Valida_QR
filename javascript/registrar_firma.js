@@ -2,29 +2,40 @@ document.addEventListener('DOMContentLoaded', function () {
     const registroForm = document.getElementById('registroForm');
     const mensajeError = document.getElementById('mensaje-error');
 
-    registroForm.addEventListener('submit', function (event) {
+    registroForm.addEventListener('submit', async function (event) {
         event.preventDefault(); // Evita el envío del formulario por defecto
 
-        const formData = new FormData(registroForm);
+        try {
+            const formData = new FormData(registroForm);
 
-        // Realiza una solicitud AJAX para enviar el formulario
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '../html/registrar_firma.php', true); // Reemplaza con la ruta correcta
+            // Realiza una solicitud AJAX utilizando fetch
+            const response = await fetch('../html/registrar_firma.php', {
+                method: 'POST',
+                body: formData,
+            });
 
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                if (xhr.responseText === "Firma registrada exitosamente") {
+            if (response.ok) {
+                const responseData = await response.text();
+                if (responseData.trim() === "Firma registrada exitosamente") {
                     // Muestra una ventana emergente con el mensaje
                     alert("Firma registrada exitosamente");
-                    
                     // Redirige a pagina.html
                     window.location.href = '../html/pagina.php';
                 } else {
-                    mensajeError.textContent = xhr.responseText;
+                    mensajeError.style.color = 'yellow';
+                    mensajeError.style.fontSize = '19px';
+                    mensajeError.textContent = responseData;
                 }
+            } else {
+                throw new Error('Error en la solicitud AJAX');
             }
-        };
-
-        xhr.send(formData);
+        } catch (error) {
+            console.error('Error en la solicitud AJAX:', error);
+            mensajeError.style.color = 'red';
+            mensajeError.style.fontSize = '19px';
+            mensajeError.textContent = 'Error en la solicitud AJAX';
+        }
     });
 });
+
+

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".slider");
     const sliderDots = document.querySelectorAll(".slider-dot");
+    const prevButton = document.querySelector(".slider-arrow.prev");
+    const nextButton = document.querySelector(".slider-arrow.next");
     let slideIndex = 0;
 
     function showSlide(index) {
@@ -26,12 +28,29 @@ document.addEventListener("DOMContentLoaded", function () {
         setActiveDot(slideIndex);
     }
 
+    function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 0) {
+            slideIndex = sliderDots.length - 1;
+        }
+        showSlide(slideIndex);
+        setActiveDot(slideIndex);
+    }
+
     sliderDots.forEach((dot, index) => {
         dot.addEventListener("click", () => {
             slideIndex = index;
             showSlide(slideIndex);
             setActiveDot(slideIndex);
         });
+    });
+
+    prevButton.addEventListener("click", () => {
+        prevSlide();
+    });
+
+    nextButton.addEventListener("click", () => {
+        nextSlide();
     });
 
     // Cambia automáticamente la imagen cada 3 segundos (3000 ms)
@@ -41,4 +60,3 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(slideIndex);
     setActiveDot(slideIndex);
 });
-

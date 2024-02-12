@@ -1,0 +1,8 @@
+{
+  "require": {
+    "spipu/html2pdf": "^5.2",
+    "endroid/qr-code": "^4.8",
+    "bacon/bacon-qr-code": "^2.0",
+    "setasign/fpdf": "^1.8"
+  }
+}

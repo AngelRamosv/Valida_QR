@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/registrar_firma.css">
+    <link rel="stylesheet" href="../css/firmar_doc.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </head>
 <body>
@@ -15,7 +16,8 @@
     <div class="containerv">
         <h3>!!AVISO¡¡</h3>
          <ul>           
-            <p>Tu firma digital solo será válida cuando firmes este documento y tu password coincida en la BD</p>
+            <p>Tu firma digital solo será válida para este documento</p>
+            <p>Debes firmar con tu password registrado en Registrar Firma</p>
          </ul>
      </div>
 
@@ -41,9 +43,9 @@
                 <div class="input-box">
                     <select name="tipo" class="input-control">
                         <option value="" disabled selected>Tipo de documento</option>
-                        <option value="CBI">Constancia</option>
-                        <option value="CSH">Certificación</option>
-                        <option value="CSS">Reconocimiento</option>
+                        <option value="Constancia">Constancia</option>
+                        <option value="Certificación">Certificacion</option>
+                        <option value="Reconocimiento">Reconocimiento</option>
                     </select>
                 </div>
 
@@ -55,13 +57,17 @@
                     <input type="password" placeholder="Password" class="input-control" name="pasword">
                 </div>
 
-                <button type="submit" class="btn">Firmar</button> <br>
+                <button id="firmarBtn" class="btn">Firmar</button>
+                <br>
+                <button id="verPdf" class="btn">Crear PDF</button>
 
-                <!-- Elemento div para mostrar los mensajes de error -->
-                <div id="mensaje-error" style="color: white;"></div>
+             <!-- Elemento div para mostrar los mensajes de error -->
+            <div id="mensaje-error" style="color: yellow;"></div>
             </form>
+
         </section>
     </div>
     <script src="../javascript/firmar_doc.js"></script>
+
 </body>
 </html>

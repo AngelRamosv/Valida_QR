@@ -44,13 +44,13 @@ div section p {
     background-color: rgba(23, 25, 87, 0.5);
 }
 
-div section:hover {
+/*div section:hover {
     box-shadow: 0 0.1rem 0.4rem green;
-}
+}*/
 
 /*aqui empieza css formulario*/
 body {
-    background-image: url('https://8columnas.com.mx/ocho/wp-content/uploads/2020/03/uam.jpg'); /* Ruta de la imagen de fondo */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzPKLYLPaDjdphT3ozJQNKUywjIIG10kzauw&usqp=CAU'); /* Ruta de la imagen de fondo */
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;

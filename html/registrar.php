@@ -10,12 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST["contraseña"];
 
     if (empty($nombre) || empty($apaterno) || empty($amaterno) || empty($correo) || empty($usuario) || empty($contrasena)) {
-        $mensajeError = "Faltan datos por llenar";
+        $mensajeError = "*Faltan datos por llenar";
     } elseif (strlen($contrasena) !== 8) {
-        $mensajeError = "La contraseña debe tener exactamente 8 caracteres.";
+        $mensajeError = "*La contraseña debe tener exactamente 8 caracteres.";
     } else {
         // Conexión a la base de datos
-        $conexion = new mysqli("localhost", "root", "", "bdprueba");
+        $conexion = new mysqli("localhost", "root", "", "bdpruebak");
 
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->num_rows > 0) {
 
-            $mensajeError = "El usuario ya existe.Intenta con otro.";
+            $mensajeError = "*Este usuario ya existe";
         } else {
             // Hash de la contraseña
             $contrasena = password_hash($contrasena, PASSWORD_DEFAULT);

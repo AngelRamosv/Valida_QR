@@ -25,6 +25,7 @@ body::after {
     z-index: -1; /* Colocar detrás del contenido */
 }
 
+
 .contenedor {
     padding: 60px 0;
     width: 90%;
@@ -54,10 +55,11 @@ header {
     background-size: cover;
 }
 
-header nav {
-    display: flex;
+header nav a {
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 10px;
 }
 
 .titulov {
@@ -74,10 +76,12 @@ header nav img {
     font-size: 1rem;
     background-color:  rgba(39, 32, 118, 0.5);
     padding: 5px;
+    display: inline-flex;
+    margin-left: -735px;
 }
 
 nav{
-    text-align: right;
+    text-align: left;
     padding: 30px 50px 0 0;
 }
 
@@ -101,8 +105,10 @@ img {
 }
 header .textos-header{
     display: flex;
-    height: 430px;
-    width: 100%;
+    height: 410px;
+    width: 70%;
+    margin-left: 210px;
+    margin-top: -70px;
     align-items: center;
     justify-content: center;
     flex-direction: column;

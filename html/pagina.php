@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav>
-            <img src="../imagen/logo.png" width="185px" height="50px" alt="logo">
+            <img src="../imagen/logout.png" width="235px" height="110px" alt="logo">
             <a href="registrar_firma.html">Registrar firma</a>
             <a href="firmar_doc.html">Firmar</a>
             <a href="consultar.html">Consultar</a>
@@ -28,8 +28,7 @@
             ?>
         </nav>
         <section class="textos-header">
-            <h1>Validación de firmas digitales a traves de códigos QR</h1>            
-        
+            <h1>Validación de la autenticación de firmas digitales a través de códigos QR</h1>            
     </header>
     <main>
         <section class="contenedor sobre-proyecto"><br><br>
@@ -44,67 +43,7 @@
                 </div>
             </div>
         </section>
-        <section class="participantes">
-            <div class="contenedor">
-                <h2 class="titulo">Participantes</h2>
-                <div class="galeria-port">
-                    <div class="imagen-port">
-                        <img src="../imagen/img1.jpg" alt="">
-                        <div class="hover-galeria">
-                            <p>Dra. Medina Ramírez Reyna Carolina Asesora <br><br>
-                               Asesora del proyecto final <br><br>
-                               Ciencias computacionales</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="../imagen/img1.jpg" alt="">
-                        <div class="hover-galeria">
-                           <p>Abundez Zamora Adrián <br><br>
-                              Ingenieria en Computación <br><br>
-                              Desarrollador backend <br><br>
-                              Novedoso</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="../imagen/Angel.jpg" alt="">
-                        <div class="hover-galeria">
-                           <p>Ramos Castellanos Miguel Angel <br><br>
-                              Ingenieria en Computación <br><br>
-                              Desarrollador backend <br><br>
-                              Dispuesto al trabajo en equipo</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="../imagen/Arath.jpg" alt="">
-                        <div class="hover-galeria">
-                           <p>Mora Mejia Edson Arath <br><br> 
-                              Ingieneria en Electrónica <br><br>
-                              Desarrollador Frontend <br><br>
-                              Novedoso en ideas</p>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-        </section>
-        <section class="clientes contenedor">
-            <h2 class="titulov">Ventajas del uso de códigos QR</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="../imagen/img2.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>1</h4>
-                        <p>Seguridad mejorada: Protege la información y dificulta la falsificación.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../imagen/img3.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>2</h4>
-                        <p>Facilidad de verificación: Permite una rápida validación de firmas digitales.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+       
         <section class="about-services">
             <div class="contenedor">
                 <h2 class="titulo">Otros articulos</h2>

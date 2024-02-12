@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = '../html/index.html';
                 } else {
                     // Si la respuesta es un error, muestra el mensaje de error en el div
-                    mensajeDiv.style.color = 'white';
+                    mensajeDiv.style.color = 'yellow';
+                    mensajeDiv.style.fontSize = '19px';
                     mensajeDiv.textContent = respuesta.mensaje;
                 }
             }

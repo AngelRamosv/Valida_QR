@@ -38,7 +38,7 @@
                     <input type="text" placeholder="Curp" class="input-control" name="curp">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Departamento" class="input-control" name="depa">
+                    <input type="text" placeholder="Adscripción" class="input-control" name="depa">
                 </div>
                 <div class="input-box">
                     <select name="division" class="input-control">
@@ -48,15 +48,26 @@
                         <option value="CSS">CSS</option>
                     </select>
                 </div>
+
                 <div class="input-box">
-                    <input type="text" placeholder="Cargo" class="input-control" name="cargo">
+                    <select name="cargo" class="input-control">
+                        <option value="" disabled selected>Cargo</option>
+                        <option value="CBI">Estudiante</option>
+                        <option value="CSH">Profesor</option>
+                        <option value="CSS">Administrativo</option>
+                        <option value="CSS">Secretario</option>
+                        <option value="CSS">Otro</option>
+                    </select>
                 </div>
+
                 <div class="input-box">
                     <select name="unidad" class="input-control">
                         <option value="" disabled selected>Unidad</option>
                         <option value="CBI">Iztapalapa</option>
                         <option value="CSH">Lerma</option>
                         <option value="CSS">Xochimilco</option>
+                        <option value="CSS">Cuajimalpa</option>
+                        <option value="CSS">Atzcapotzalco</option>
                     </select>
                 </div>
 
@@ -71,7 +82,7 @@
                 <button type="submit" class="btn">Registrar</button> <br>
 
                 <!-- Elemento div para mostrar los mensajes de error -->
-                <div id="mensaje-error" style="color: white;"></div>
+                <div id="mensaje-error" style="color: yellow;"></div>
             </form>
         </section>
     </div>

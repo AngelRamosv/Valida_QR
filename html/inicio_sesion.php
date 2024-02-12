@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $clave = $_POST['pasword'];
 
         if (empty($usuario) || empty($clave)) {
-            echo json_encode(array("error" => true, "mensaje" => "Llenar todos los campos."));
+            echo json_encode(array("error" => true, "mensaje" => "*Llenar todos los campos"));
         } else {
-            $conexion = new mysqli("localhost", "root", "", "bdprueba");
+            $conexion = new mysqli("localhost", "root", "", "bdpruebak");
 
             if ($conexion->connect_error) {
                 echo json_encode(array("error" => true, "mensaje" => "Error en la conexión a la base de datos."));
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         echo json_encode(array("error" => false, "mensaje" => "Inicio de sesión exitoso"));
                     } else {
-                        echo json_encode(array("error" => true, "mensaje" => "Datos incorrectos"));
+                        echo json_encode(array("error" => true, "mensaje" => "*Datos incorrectos"));
                     }
                 } else {
                     echo json_encode(array("error" => true, "mensaje" => "Error en la consulta: " . $stmt->error));

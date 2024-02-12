@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica si algún campo está vacío
     if (empty($fecha_registro) || empty($usuario) || empty($curp) || empty($depa) || empty($division) || empty($cargo) || empty($unidad) || empty($pasword) || empty($confirm_pasword)) {
-        echo "Llenar todos los campos";
+        echo "Llenar todos los campos :)";
     } else {
         // Verifica que las contraseñas coincidan
         if ($pasword !== $confirm_pasword) {
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $dbname = "bdprueba";
+                $dbname = "bdpruebak";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -37,13 +37,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     die("Conexión fallida: " . $conn->connect_error);
                 }
 
-                // Inserta los datos en la base de datos (ajusta la consulta SQL)
-                $sql = "INSERT INTO firma (fecha_registro, nombre_usuario, curp, depto, division, cargo, unidad, pasword) VALUES ('$fecha_registro', '$usuario', '$curp', '$depa', '$division', '$cargo', '$unidad', '$pasword')";
+                // Verifica si el usuario existe en la tabla usuario
+                $checkUserQuery = "SELECT id FROM usuario WHERE usuario = '$usuario'";
+                $checkUserResult = $conn->query($checkUserQuery);
 
-                if ($conn->query($sql) === TRUE) {
-                    echo "Firma registrada exitosamente";
+                if ($checkUserResult === false) {
+                    // Manejar el error de consulta
+                    echo "Error en la consulta: " . $conn->error;
                 } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
+                    // Verifica si el usuario existe
+                    if ($checkUserResult->num_rows > 0) {
+                        // Inserta los datos en la base de datos (ajusta la consulta SQL)
+                        $sql = "INSERT INTO firma (fecha_registro, nombre_usuario, curp, depto, division, cargo, unidad, pasword, confirm_pasword) VALUES ('$fecha_registro', '$usuario', '$curp', '$depa', '$division', '$cargo', '$unidad', '$pasword', '$confirm_pasword')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            echo "Firma registrada exitosamente";
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                    } else {
+                        echo "Usuario no válido";
+                    }
                 }
 
                 $conn->close();

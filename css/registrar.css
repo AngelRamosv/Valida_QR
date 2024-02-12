@@ -36,9 +36,9 @@ img {
     display: flex;
     margin: 0 auto;
 }
-div section:hover {
+/*div section:hover {
     box-shadow: 0 0.1rem 0.4rem green;
-}
+}*/
 
 /*aqui empieza css formulario*/
 body {

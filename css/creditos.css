@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Para apilar los elementos verticalmente */
+    align-items: center;
+    height: 100vh;
+    background-color: #4CAF50; /* Fondo verde */
+}
+
+.page-title {
+    margin: 20px 0; /* Espaciado alrededor del título */
+    color: #fff; /* Color del texto blanco */
+}
+
+.credits-container {
+    display: flex;
+    /* justify-content: space-around; Eliminamos el espacio alrededor */
+    margin-top: 20px; /* Agregamos margen superior para separar el título de los cuadros */
+}
+
+.credit-box {
+    text-align: center;
+    margin: 0 10px; /* Espaciado entre cuadros */
+    animation: fade 1s ease-in-out, moveUpDown 2s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes moveUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}

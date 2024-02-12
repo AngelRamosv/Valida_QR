@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = '../html/pagina.php';
                 } else {
                     // Si hay un error, muestra el mensaje de error en el div
-                    mensajeDiv.style.color = 'white';
+                    mensajeDiv.style.color = 'yellow';
+                    mensajeDiv.style.fontSize = '19px';
                     mensajeDiv.textContent = respuesta.mensaje;
                 }
             }
@@ -27,3 +28,4 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.send(formData);
     });
 });
+

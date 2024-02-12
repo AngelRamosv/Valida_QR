@@ -10,36 +10,61 @@ header {
     align-items: center;
     padding: 30px;
 }
-
 .center {
-    display:flex;
+    /*display: flex;*/
     text-align: center; /* Centra el texto horizontalmente */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-}
-.logo {
-    display: flex;
-    align-items: center;
+    margin-right: 280px;
 }
 
-.logo img {
-    margin-right: 50px;
+.icon {
+    margin-left: -110px;
 }
+
 nav a {
     font-weight: 600;
     padding-right: 10px;
     color: black;
 }
 
+.id1 {
+    margin-left: 330px;
+}
+/*
+.nombre::before {
+    content: "Valid";
+    color: rgb(213, 211, 84); 
+    text-shadow: 4px 4px 5px #17145b;
+    display: inline-block;
+    transform: scaleX(2.1) scaleY(2);
+}
+*/
+
+/*
+.nombre::after {
+    content: "-uam";
+    color: black; 
+    text-shadow: 4px 4px 5px #5c9ab0; 
+    display: inline-block;
+    transform: scaleX(2.1) scaleY(2);
+    margin-left: 70px;
+}
+*/
+.logo {
+    margin-left: 130px;
+    display: flex;
+    align-items: center;
+}
+
 /* Estilo del contenedor del slider */
 main {
     background-image: linear-gradient(to right, green, rgb(120, 199, 110));
-    padding: 20px;
+    padding: 50px;
 }
 
 .slider-container {
     position: relative;
     width: 100%;
-    max-width: 1500px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -47,17 +72,18 @@ main {
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    position: relative;
 }
 
 .slider img {
     width: 100%;
     height: auto;
+    background: linear-gradient(130deg, #509fc9, #e83b59);
 }
-
 /* Estilo de los controles del slider */
 .slider-controls {
     text-align: center;
-    margin-top: 10px;
+    padding-top: 15px;
 }
 
 .slider-dot {
@@ -67,28 +93,68 @@ main {
     height: 5px;
     border-radius: 10%;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+/*botones*/
+.slider-arrow {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 5%;
+}
+
+.prev {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(150px);
+}
+
+.next {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(150px);
 }
 
 /* Estilo del pie de página */
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #333;
+    height: 3rem;
+    background-color: rgb(14, 15, 25);
     color: #fff;
     position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button:hover {
-    background-color: rgb(28, 89, 26); /* Color al pasar el ratón */
+    background-color: rgb(45, 123, 19); /* Color al pasar el ratón */
     color: white;
 }
-.icono {
+.nel {
     position: absolute; /* Coloca el icono con posición absoluta */
     top: 0; /* Ajusta la posición vertical si es necesario */
-    padding-right: 190px; /* Coloca el icono en la esquina superior derecha del footer */
+    padding-left: 960px; /* Coloca el icono en la esquina superior derecha del footer */
 }
-nav a:hover {
+
+.link {
+   color: black;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: large;
+}
+
+nav a.link {
+    transition: color 0.9s ease; /* Ajusta la propiedad, la duración y el retraso según sea necesario */
+}
+
+nav a.link:hover {
     color: white;
+    transition-duration: 0.9s;
 }
 
 button {
@@ -96,7 +162,9 @@ button {
     width: 150px;
     height: 50px;
     background-color: black;
-    color: #fff;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
