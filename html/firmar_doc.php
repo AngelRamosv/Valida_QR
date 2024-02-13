@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica si algún campo está vacío
     if (empty($nombre_user) || empty($nombre_doc) || empty($fecha) || empty($tipo) || empty($evento) || empty($pasword)) {
-        echo "Llenar todos los campos";
+        echo "Llenar todos los camposo";
     } else {
         // Conexión a la base de datos (ajusta las credenciales)
         $servername = "localhost";
@@ -102,7 +102,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Verificar si el PDF se ha guardado exitosamente
                 if (file_exists($pdfFilePath)) {
-                    echo "Documento firmado exitosamente";
+                    // Verificar si ya existe una entrada en la tabla firma para este usuario y documento
+                    $sqlCheckExisting = "SELECT id FROM firma WHERE id_usuario = '{$row["id"]}' AND id_documento = '$idDocumento'";
+                    $resultCheckExisting = $conn->query($sqlCheckExisting);
+
+                    if ($resultCheckExisting->num_rows > 0) {
+                        // Ya existe una entrada, actualizamos la fila existente
+                        $sqlUpdateFirma = "UPDATE firma SET fecha_registro = NOW(), pasword = '$pasword', confirm_pasword = '$pasword' WHERE id_usuario = '{$row["id"]}' AND id_documento = '$idDocumento'";
+                        if ($conn->query($sqlUpdateFirma) === TRUE) {
+                            echo "Documento firmado exitosamente";
+                        } else {
+                            echo "Error al actualizar la fila en la tabla firma: " . $conn->error;
+                        }
+                    } else {
+                        // No existe una entrada, insertamos una nueva fila
+                        $sqlInsertFirma = "INSERT INTO firma (fecha_registro, nombre_usuario, id_usuario, id_documento, pasword, confirm_pasword) 
+                                          VALUES (NOW(), '$nombre_usuario', '{$row["id"]}', '$idDocumento', '$pasword', '$pasword')";
+                        if ($conn->query($sqlInsertFirma) === TRUE) {
+                            echo "Documento firmado exitosamente";
+                        } else {
+                            echo "Error al guardar el registro en la tabla firma: " . $conn->error;
+                        }
+                    }
                 } else {
                     echo "Error al guardar el documento PDF";
                 }
@@ -139,3 +160,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+
